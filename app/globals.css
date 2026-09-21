@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080b12;
+  color: #f7f7f7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
+  height: 72px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8, 11, 18, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #202633;
+}
+
+.brand {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.brand span,
+.hero-copy h1 span {
+  color: #7c5cff;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 28px;
+  color: #b9c0ce;
+}
+
+.navbar nav a:hover {
+  color: white;
+}
+
+.hero {
+  min-height: calc(100vh - 72px);
+  padding: 6%;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 40px;
+  align-items: center;
+  background: radial-gradient(circle at 75% 35%, #211653 0, #080b12 42%);
+}
+
+.eyebrow {
+  color: #9b87ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.6rem, 5vw, 5rem);
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.hero-copy > p:not(.eyebrow) {
+  color: #aeb6c5;
+  line-height: 1.8;
+  max-width: 540px;
+  margin-bottom: 30px;
+}
+
+.button {
+  display: inline-block;
+  border: 0;
+  border-radius: 10px;
+  padding: 13px 20px;
+  background: #7c5cff;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  background: #6d4df1;
+}
+
+.viewer-card {
+  height: min(650px, 72vh);
+  overflow: hidden;
+  border: 1px solid #2a3040;
+  border-radius: 24px;
+  background: #111622;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+}
+
+model-viewer {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.section {
+  padding: 100px 6%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: end;
+  margin-bottom: 35px;
+}
+
+.section h2,
+.contact-section h2 {
+  font-size: 2.5rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter {
+  border: 1px solid #303746;
+  background: #121722;
+  color: #b9c0ce;
+  border-radius: 999px;
+  padding: 9px 15px;
+  cursor: pointer;
+}
+
+.filter.active,
+.filter:hover {
+  background: #7c5cff;
+  color: white;
+  border-color: #7c5cff;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.card {
+  padding: 25px;
+  min-height: 180px;
+  border: 1px solid #272e3c;
+  border-radius: 18px;
+  background: #10151f;
+}
+
+.card-icon {
+  font-size: 1.7rem;
+  margin-bottom: 25px;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #9b87ff;
+  margin-bottom: 12px;
+}
+
+.card small {
+  color: #7f8899;
+}
+
+.contact-section {
+  padding: 90px 6%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  background: #0d1119;
+}
+
+.contact-section > div > p:last-child {
+  color: #9ea7b7;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-top: 18px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 13px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #2d3545;
+  background: #080b12;
+  color: white;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #7c5cff;
+}
+
+.status {
+  color: #aeb6c5;
+  font-size: 0.9rem;
+}
+
+footer {
+  padding: 25px 6%;
+  color: #697385;
+  border-top: 1px solid #202633;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 45px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar nav {
+    display: none;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .viewer-card {
+    height: 480px;
+  }
+}
